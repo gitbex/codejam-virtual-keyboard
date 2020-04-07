@@ -1,0 +1,87 @@
+body {
+  background: #454547;
+}
+/* this skeleton of keyboard */
+.keyboard {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 5px 0;
+  background: #454547;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  transition: bottom 0.4s; /* this makes on/off of keyboard smooth. */
+  height: 300px;
+}
+
+/* to hide keyboard */
+.keyboard--hidden {
+  bottom: -100%;
+}
+
+.keyboard__keys {
+  text-align: center;
+}
+
+/* this is single keyboard key */
+.keyboard__key {
+  height: 45px;
+  width: 6%;
+  min-width: 80px;
+  margin: 3px;
+  border-radius: 4px;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffff;
+  font-size: 1.05rem;
+  outline: none;
+  cursor: pointer;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  vertical-align: top;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  position: relative; /* this needed for shift button on/off light*/
+}
+
+.keyboard__key:active {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.keyboard__key--wide {
+  width: 12%;
+}
+
+.keyboard__key--extra-wide {
+  width: 36%;
+  min-width: 500px;
+}
+
+.keyboard__key--activatable::after {
+  content: "";
+  top: 10px;
+  right: 10px;
+  position: absolute; /* this for on/off shift button light */
+  width: 8px;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+}
+
+.keyboard__key--activate::after {
+  background: #08ff00;
+}
+
+.keyboard__key--dark {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.use-keyboard-input {
+  position: absolute;
+  top: 50px;
+  left: 230px;
+  width: 1125px;
+  height: 350px;
+  border: 2px solid black;
+}
